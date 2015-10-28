@@ -1,0 +1,14 @@
+pom.xml
+*jar
+/electron/
+/lib/
+/classes/
+/out/
+/target/
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+node_modules
+*.iml
+*.ipr
+*.iws
