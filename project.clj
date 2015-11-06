@@ -11,32 +11,40 @@
   :hooks [leiningen.cljsbuild]
   :cljsbuild {
                :builds {
-                 :main {
-                         :id "meshtomato"
-                         :source-paths ["src"]
-                         :incremental true
-                         :jar true
-                         :assert true
-                         :compiler {:output-to "app/js/cljsbuild-main.js"
-                                    :externs ["app/js/externs.js"
-                                              "node_modules/closurecompiler-externs/path.js"
-                                              "node_modules/closurecompiler-externs/process.js"]
-                                    :warnings true
-                                    :elide-asserts true
-                                    :target :nodejs
+                        :main {
+                               :id "meshtomato"
+                               :source-paths ["src"]
+                               :incremental true
+                               :jar true
+                               :assert true
+                               :compiler {:output-to "app/js/cljsbuild-main.js"
+                                          :externs ["app/js/externs.js"
+                                                    "node_modules/closurecompiler-externs/path.js"
+                                                    "node_modules/closurecompiler-externs/process.js"]
+                                          :warnings true
+                                          :elide-asserts true
+                                          :target :nodejs
 
-                                    ;; no optimize compile (dev)
-                                    ;;:optimizations :none
-                                    ;; when no optimize uncomment
-                                    ;;:output-dir "app/js/out"
+                                          ;; no optimize compile (dev)
+                                          ;;:optimizations :none
+                                          ;; when no optimize uncomment
+                                          ;;:output-dir "app/js/out"
 
-                                    ;; simple compile (dev)
-                                    :optimizations :simple
+                                          ;; simple compile (dev)
+                                          :optimizations :simple
 
-                                    ;; advanced compile (prod)
-                                    ;:optimizations :advanced
+                                          ;; advanced compile (prod)
+                                          ;:optimizations :advanced
 
-                                    ;:source-map "app/js/test.js.map"
-                                    :pretty-print true
-                                    :output-wrapper true
-                                    }}}})
+                                          ;:source-map "app/js/test.js.map"
+                                          :pretty-print true
+                                          :output-wrapper true
+                                          }}
+                        :test {
+                               :source-paths ["src/meshtomato/core" "test"]
+                               :compiler {:output-to "target/test-suite.js"
+                                          :warnings true
+                                          :target :nodejs
+                                          :optimizations :simple
+                                          :pretty-print true}}}
+              :test-commands {"unit-tests" ["node" "target/test-suite.js"]}})

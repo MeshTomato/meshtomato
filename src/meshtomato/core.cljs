@@ -1,5 +1,6 @@
 (ns meshtomato.core
-  (:require [cljs.nodejs :as nodejs]))
+  (:require [cljs.nodejs :as nodejs]
+            [meshtomato.core.timer :as timer]))
 
 (def path (nodejs/require "path"))
 
