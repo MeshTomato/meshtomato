@@ -40,6 +40,31 @@
                                           :pretty-print true
                                           :output-wrapper true
                                           }}
+                        :renderer {
+                               :id "meshtomato"
+                               :source-paths ["src-renderer"]
+                               :incremental true
+                               :jar true
+                               :assert true
+                               :compiler {:output-to "app/js/renderer.js"
+                                          :warnings true
+                                          :elide-asserts true
+
+                                          ;; no optimize compile (dev)
+                                          ;;:optimizations :none
+                                          ;; when no optimize uncomment
+                                          ;;:output-dir "app/js/out"
+
+                                          ;; simple compile (dev)
+                                          :optimizations :simple
+
+                                          ;; advanced compile (prod)
+                                          ;:optimizations :advanced
+
+                                          ;:source-map "app/js/test.js.map"
+                                          :pretty-print true
+                                          :output-wrapper true
+                                          }}
                         :test {
                                :source-paths ["src/meshtomato/core" "test"]
                                :compiler {:output-to "target/test-suite.js"

@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 if(typeof Math.imul == "undefined" || (Math.imul(0xffffffff,5) == 0)) {
     Math.imul = function (a, b) {
         var ah  = (a >>> 16) & 0xffff;
@@ -1782,7 +1781,7 @@ goog.array.copyByIndex = function(a, b) {
 var cljs = {core:{}};
 cljs.core._STAR_clojurescript_version_STAR_ = "1.7.145";
 cljs.core._STAR_unchecked_if_STAR_ = !1;
-cljs.core._STAR_target_STAR_ = "nodejs";
+cljs.core._STAR_target_STAR_ = "default";
 cljs.core._STAR_ns_STAR_ = null;
 cljs.core._STAR_out_STAR_ = null;
 cljs.core._STAR_assert_STAR_ = !0;
@@ -8166,30 +8165,30 @@ cljs.core.not_empty = function(a) {
   return cljs.core.seq(a) ? a : null;
 };
 cljs.core.nil_iter = function cljs$core$nil_iter() {
-  "undefined" === typeof cljs.core.t_cljs$core7740 && (cljs.core.t_cljs$core7740 = function(b, c) {
+  "undefined" === typeof cljs.core.t_cljs$core7722 && (cljs.core.t_cljs$core7722 = function(b, c) {
     this.nil_iter = b;
-    this.meta7741 = c;
+    this.meta7723 = c;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
     this.cljs$lang$protocol_mask$partition1$ = 0;
-  }, cljs.core.t_cljs$core7740.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
-    return new cljs.core.t_cljs$core7740(this.nil_iter, c);
-  }, cljs.core.t_cljs$core7740.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta7741;
-  }, cljs.core.t_cljs$core7740.prototype.hasNext = function() {
+  }, cljs.core.t_cljs$core7722.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
+    return new cljs.core.t_cljs$core7722(this.nil_iter, c);
+  }, cljs.core.t_cljs$core7722.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta7723;
+  }, cljs.core.t_cljs$core7722.prototype.hasNext = function() {
     return !1;
-  }, cljs.core.t_cljs$core7740.prototype.next = function() {
+  }, cljs.core.t_cljs$core7722.prototype.next = function() {
     return Error("No such element");
-  }, cljs.core.t_cljs$core7740.prototype.remove = function() {
+  }, cljs.core.t_cljs$core7722.prototype.remove = function() {
     return Error("Unsupported operation");
-  }, cljs.core.t_cljs$core7740.getBasis = function() {
-    return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.with_meta(new cljs.core.Symbol(null, "nil-iter", "nil-iter", 1101030523, null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "arglists", "arglists", 1661989754), cljs.core.list(new cljs.core.Symbol(null, "quote", "quote", 1377916282, null), cljs.core.list(cljs.core.PersistentVector.EMPTY))], null)), new cljs.core.Symbol(null, "meta7741", "meta7741", -693311865, null)], 
+  }, cljs.core.t_cljs$core7722.getBasis = function() {
+    return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.with_meta(new cljs.core.Symbol(null, "nil-iter", "nil-iter", 1101030523, null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "arglists", "arglists", 1661989754), cljs.core.list(new cljs.core.Symbol(null, "quote", "quote", 1377916282, null), cljs.core.list(cljs.core.PersistentVector.EMPTY))], null)), new cljs.core.Symbol(null, "meta7723", "meta7723", 485095303, null)], 
     null);
-  }, cljs.core.t_cljs$core7740.cljs$lang$type = !0, cljs.core.t_cljs$core7740.cljs$lang$ctorStr = "cljs.core/t_cljs$core7740", cljs.core.t_cljs$core7740.cljs$lang$ctorPrWriter = function(b, c, d) {
-    return cljs.core._write(c, "cljs.core/t_cljs$core7740");
-  }, cljs.core.__GT_t_cljs$core7740 = function(b, c) {
-    return new cljs.core.t_cljs$core7740(b, c);
+  }, cljs.core.t_cljs$core7722.cljs$lang$type = !0, cljs.core.t_cljs$core7722.cljs$lang$ctorStr = "cljs.core/t_cljs$core7722", cljs.core.t_cljs$core7722.cljs$lang$ctorPrWriter = function(b, c, d) {
+    return cljs.core._write(c, "cljs.core/t_cljs$core7722");
+  }, cljs.core.__GT_t_cljs$core7722 = function(b, c) {
+    return new cljs.core.t_cljs$core7722(b, c);
   });
-  return new cljs.core.t_cljs$core7740(cljs$core$nil_iter, cljs.core.PersistentArrayMap.EMPTY);
+  return new cljs.core.t_cljs$core7722(cljs$core$nil_iter, cljs.core.PersistentArrayMap.EMPTY);
 };
 cljs.core.StringIter = function(a, b) {
   this.s = a;
@@ -19548,96 +19547,12 @@ cljs.core.find_macros_ns = function(a) {
 cljs.core.ns_name = function(a) {
   return a.name;
 };
-var meshtomato = {core:{}};
-meshtomato.core.bounce = {};
-meshtomato.core.bounce.init = function(a, b) {
-  console.log("loaded bounce-core");
-  return b.on("bounce-dock", function(b, d) {
-    console.log("should bounce");
-    return console.log(a.dock.bounce());
-  });
+var meshtomato = {renderer:{}};
+meshtomato.renderer.bounce = {};
+meshtomato.renderer.bounce.ipc = require("ipc");
+meshtomato.renderer.bounce.bounce_this = function() {
+  return meshtomato.renderer.bounce.ipc.send("bounce-dock");
 };
-cljs.nodejs = {};
-cljs.nodejs.require = require;
-cljs.nodejs.process = process;
-cljs.nodejs.enable_util_print_BANG_ = function() {
-  cljs.core._STAR_print_newline_STAR_ = !1;
-  cljs.core._STAR_print_fn_STAR_ = function() {
-    var a = function(a) {
-      return console.log.apply(console, cljs.core.into_array.call(null, a));
-    }, b = function(b) {
-      var d = null;
-      if (0 < arguments.length) {
-        for (var d = 0, e = Array(arguments.length - 0);d < e.length;) {
-          e[d] = arguments[d + 0], ++d;
-        }
-        d = new cljs.core.IndexedSeq(e, 0);
-      }
-      return a.call(this, d);
-    };
-    b.cljs$lang$maxFixedArity = 0;
-    b.cljs$lang$applyTo = function(b) {
-      b = cljs.core.seq(b);
-      return a(b);
-    };
-    b.cljs$core$IFn$_invoke$arity$variadic = a;
-    return b;
-  }();
-  cljs.core._STAR_print_err_fn_STAR_ = function() {
-    var a = function(a) {
-      return console.error.apply(console, cljs.core.into_array.call(null, a));
-    }, b = function(b) {
-      var d = null;
-      if (0 < arguments.length) {
-        for (var d = 0, e = Array(arguments.length - 0);d < e.length;) {
-          e[d] = arguments[d + 0], ++d;
-        }
-        d = new cljs.core.IndexedSeq(e, 0);
-      }
-      return a.call(this, d);
-    };
-    b.cljs$lang$maxFixedArity = 0;
-    b.cljs$lang$applyTo = function(b) {
-      b = cljs.core.seq(b);
-      return a(b);
-    };
-    b.cljs$core$IFn$_invoke$arity$variadic = a;
-    return b;
-  }();
-  return null;
-};
-meshtomato.core.path = cljs.nodejs.require.call(null, "path");
-meshtomato.core.BrowserWindow = cljs.nodejs.require.call(null, "browser-window");
-meshtomato.core.crash_reporter = cljs.nodejs.require.call(null, "crash-reporter");
-meshtomato.core._STAR_win_STAR_ = cljs.core.atom.call(null, null);
-meshtomato.core.app = cljs.nodejs.require.call(null, "app");
-meshtomato.core.js_app = require("app");
-meshtomato.core.js_ipc = require("ipc");
-meshtomato.core._main = function() {
-  meshtomato.core.crash_reporter.start();
-  meshtomato.core.bounce.init.call(null, meshtomato.core.js_app, meshtomato.core.js_ipc);
-  cljs.nodejs.process.on("error", function(a) {
-    return console.log(a);
-  });
-  meshtomato.core.app.on("window-all-closed", function() {
-    return cljs.core.not_EQ_.call(null, cljs.nodejs.process.platform, "darwin") ? meshtomato.core.app.quit() : null;
-  });
-  return meshtomato.core.app.on("ready", function() {
-    cljs.core.reset_BANG_.call(null, meshtomato.core._STAR_win_STAR_, new meshtomato.core.BrowserWindow(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "width", "width", -384071477), 800, new cljs.core.Keyword(null, "height", "height", 1025178622), 600], null))));
-    cljs.core.deref.call(null, meshtomato.core._STAR_win_STAR_).loadUrl([cljs.core.str("file://"), cljs.core.str(meshtomato.core.path.resolve(__dirname, "../index.html"))].join(""));
-    return cljs.core.deref.call(null, meshtomato.core._STAR_win_STAR_).on("closed", function() {
-      return cljs.core.reset_BANG_.call(null, meshtomato.core._STAR_win_STAR_, null);
-    });
-  });
-};
-cljs.nodejs.enable_util_print_BANG_.call(null);
-cljs.core._STAR_main_cli_fn_STAR_ = meshtomato.core._main;
-cljs.nodejscli = {};
-COMPILED && (goog.global = global);
-if (null != cljs.core._STAR_main_cli_fn_STAR_ && cljs.core.fn_QMARK_.call(null, cljs.core._STAR_main_cli_fn_STAR_)) {
-  cljs.core.apply.call(null, cljs.core._STAR_main_cli_fn_STAR_, cljs.core.drop.call(null, 2, cljs.nodejs.process.argv));
-} else {
-  throw Error("cljs.core/*main-cli-fn* not set");
-}
-;
+goog.exportSymbol("meshtomato.renderer.bounce.bounce_this", meshtomato.renderer.bounce.bounce_this);
+
 })();

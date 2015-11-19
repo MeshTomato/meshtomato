@@ -1,9 +1,7 @@
 (ns meshtomato.tests
-  (:require [cljs.test :refer-macros [deftest is testing run-tests]]
-            [meshtomato.core.timer :as timer]))
+  (:require [cljs.test :refer-macros [deftest is testing run-tests]]))
 
-(deftest test-add
-  (is (= (timer/add 1 1) 2)))
+(deftest dummy (is (= 1 1)))
 
 (enable-console-print!)
 

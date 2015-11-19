@@ -1,6 +1,6 @@
 (ns meshtomato.core
   (:require [cljs.nodejs :as nodejs]
-            [meshtomato.core.timer :as timer]))
+            [meshtomato.core.bounce :as bounce]))
 
 (def path (nodejs/require "path"))
 
@@ -12,8 +12,13 @@
 
 (def app (nodejs/require "app"))
 
+(def js-app (js/require "app"))
+(def js-ipc (js/require "ipc"))
+
 (defn -main []
   (.start crash-reporter)
+
+  (bounce/init js-app js-ipc)
 
   ;; error listener
   (.on nodejs/process "error"
@@ -31,6 +36,7 @@
 
        ;; when no optimize comment out
        (.loadUrl @*win* (str "file://" (.resolve path (js* "__dirname") "../index.html")))
+
        ;; when no optimize uncomment
        ;; (.loadUrl @*win* (str "file://" (.resolve path (js* "__dirname") "../../../index.html")))
 
